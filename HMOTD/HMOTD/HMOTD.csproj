@@ -7,6 +7,17 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Content\**" />
+    <Content Remove="Content\**" />
+    <EmbeddedResource Remove="Content\**" />
+    <None Remove="Content\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="Views\Shared\_HorrorLayout.cshtml" />
+  </ItemGroup>
+
+  <ItemGroup>
     <None Remove="Views\Home\StyleSheet.css" />
   </ItemGroup>
 
