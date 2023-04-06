@@ -1,9 +1,4 @@
-﻿main {
-    color: white;
-    /*cursor: url("https://freevector-images.s3.amazonaws.com/uploads/vector/preview/38135/38135.png");*/
-}
-
-html, body {
+﻿html, body {
     margin: 0;
     height: 100%;
     overflow: hidden;
@@ -26,6 +21,8 @@ html, body {
 main {
     height: 100vh;
     overflow: scroll;
+    color: white;
+    font-family: 'Creepster', cursive;
 }
 
 #title {
@@ -63,4 +60,15 @@ main {
 #movie-trailer {
     text-align: center;
     font-size: 30px
+}
+
+a {
+    color: white;
+    text-decoration: overline underline;
+    text-decoration-style: double;
+}
+
+a:hover {
+    font-style: italic;
+    color: red;
 }
