@@ -12,11 +12,11 @@
 <html lang="en-us">
 <head>
     <title>Horror Movie of the Day</title>
-    <link href="~/css/HorrorStyle.css" rel="stylesheet" />
+    <link asp-append-version="true" type="text/css" href="~/css/HorrorStyle.css" rel="stylesheet" />
 </head>
-<div class="image-container">
-<body>
 
+<body>
+    <div class="image-container">
 
         <header>
         </header>
@@ -26,10 +26,10 @@
             <h3 id="movie-release">@movieOfTheDay.release_date</h3>
             <img src="@movieOfTheDay.poster_path" title="Movie of the day poster." id="movie-poster"/>
             <p id="movie-overview">@movieOfTheDay.overview</p>
-            <h3 id="movie-rating">@movieOfTheDay.vote_average</h3>
+            <h3 id="movie-rating">Movie Rating: @movieOfTheDay.vote_average/10</h3>
             <h4 id="movie-trailer">Check out the trailer on YouTube <a href="@movieVideo" target="_blank">here</a>.</h4>
         </main>
-
+    </div>
 </body>
-</div>
+
 </html>
