@@ -1,7 +1,21 @@
+using HMOTD;
+using MySql.Data.MySqlClient;
+using Newtonsoft.Json.Linq;
+using System.Data;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+
+builder.Services.AddScoped<IDbConnection>((s) =>
+{
+    IDbConnection conn = new MySqlConnection(builder.Configuration.GetConnectionString("horrormovie"));
+    conn.Open();
+    return conn;
+});
+
+builder.Services.AddTransient<IMovieInterface, MovieRepository>();
 
 var app = builder.Build();
 

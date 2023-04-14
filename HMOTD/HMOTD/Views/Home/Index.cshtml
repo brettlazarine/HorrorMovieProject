@@ -4,9 +4,9 @@
     Layout = null;
 }
 @{
-    var key = "2e5aaec53df627a3c2f12b971432f2ef";
-    var movieOfTheDay = HorrorMovieAPI.GetMovieInfo(key);
-    var movieVideo = HorrorMovieAPI.GetVideo(key, movieOfTheDay);
+    var TMDbKey = "2e5aaec53df627a3c2f12b971432f2ef";
+    var movieOfTheDay = HorrorMovieAPI.GetMovieInfo(TMDbKey);
+    var movieVideo = HorrorMovieAPI.GetVideo(TMDbKey, movieOfTheDay);
 }
 <!DOCTYPE html>
 <html lang="en-us">
@@ -22,6 +22,7 @@
     <div class="image-container">
 
         <header>
+            <a href="/movie/index">Horror Movie Db</a>
         </header>
         <main>
             <h1 id="title">Horror Movie of the Day</h1>
