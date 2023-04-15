@@ -2,6 +2,7 @@
 {
     public class Movies
     {
+        public int ID { get; set; }
         public string Title { get; set; }
         public string Genres { get; set; }
         public string ReleaseDate { get; set; }

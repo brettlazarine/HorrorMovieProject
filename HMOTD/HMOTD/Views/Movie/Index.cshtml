@@ -3,6 +3,7 @@
 }
 
 @model IEnumerable<Movies>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,7 +17,7 @@
 <body>
     <div class="image-container">
         <header>
-            <a href="home/index"></a>
+            <a href="../..">Home</a>
         </header>
         <main>
             <h2>Movies</h2>
@@ -27,6 +28,7 @@
 
             <table class="table">
                 <tr>
+                    <th>ID</th>
                     <th>Title</th>
                     <th>Genres</th>
                     <th>Release Date</th>
@@ -44,6 +46,7 @@
                 @foreach (var movie in Model)
                 {
                     <tr>
+                        <td><a href="./ViewMovie/@movie.ID">@movie.ID</a></td>
                         <td>@movie.Title</td>
                         <td>@movie.Genres</td>
                         <td>@movie.ReleaseDate</td>

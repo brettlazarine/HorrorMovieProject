@@ -1,0 +1,61 @@
+﻿@{
+    Layout = null;
+}
+
+@model Movies
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>@Model.Title</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Creepster&display=swap" rel="stylesheet">
+        <link asp-append-version="true" type="text/css" href="~/css/HorrorStyle.css" rel="stylesheet" />
+    </head>
+
+    <body>
+        <div class="image-container">
+            <header>
+                <a href="..">Back to Movies</a>
+            </header>
+            <main>
+                <h3>@Model.Title Info</h3>
+
+                    <table class="table">
+                        <tr>
+                            <th>ID</th>
+                            <th>Title</th>
+                            <th>Genres</th>
+                            <th>Release Date</th>
+                            <th>Release Country</th>
+                            <th>Movie Rating</th>
+                            <th>Review Rating</th>
+                            <th>Run Time</th>
+                            <th>Plot</th>
+                            <th>Cast</th>
+                            <th>Language</th>
+                            <th>Filming Locations</th>
+                            <th>Budget</th>
+                        </tr>
+                        <tr>
+                            <th>@Model.ID</th>
+                            <th>@Model.Title</th>
+                            <th>@Model.Genres</th>
+                            <th>@Model.ReleaseDate</th>
+                            <th>@Model.ReleaseCountry</th>
+                            <th>@Model.MovieRating</th>
+                            <th>@Model.ReviewRating</th>
+                            <th>@Model.RunTime</th>
+                            <th>@Model.Plot</th>
+                            <th>@Model.Cast</th>
+                            <th>@Model.Language</th>
+                            <th>@Model.FilmingLocations</th>
+                            <th>@Model.Budget</th>
+                        </tr>
+                    </table>
+
+            </main> 
+        </div>
+    </body>
+</html>
