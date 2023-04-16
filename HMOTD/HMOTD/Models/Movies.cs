@@ -3,6 +3,7 @@
     public class Movies
     {
         public int ID { get; set; }
+        public int ModsHaveSeen { get; set; } // will need adjustment for bool conversion
         public string Title { get; set; }
         public string Genres { get; set; }
         public string ReleaseDate { get; set; }

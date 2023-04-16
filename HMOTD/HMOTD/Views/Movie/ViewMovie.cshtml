@@ -37,6 +37,7 @@
                             <th>Language</th>
                             <th>Filming Locations</th>
                             <th>Budget</th>
+                            <th>Have Mods Seen It?</th>
                         </tr>
                         <tr>
                             <th>@Model.ID</th>
@@ -52,8 +53,13 @@
                             <th>@Model.Language</th>
                             <th>@Model.FilmingLocations</th>
                             <th>@Model.Budget</th>
+                            <th>@Model.ModsHaveSeen</th>
                         </tr>
                     </table>
+
+                    <div>
+                        <a href="../UpdateMovie/@Model.ID">Update This Movie</a>
+                    </div>
 
             </main> 
         </div>

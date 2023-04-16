@@ -24,23 +24,10 @@ namespace HMOTD
 
         public void UpdateMovie(Movies movie)
         {
-            _conn.Execute("UPDATE horrormovies SET Title = @title, Genres = @genres, ReleaseDate = @releaseDate, ReleaseCountry = @releaseCountry," +
-                "MovieRating = @movieRating, ReviewRating = @reviewRating, RunTime = @runTime, Plot = @plot, Cast = @cast," +
-                "Language = @language, FilmingLocations = @filmingLocations, Budget = @budget WHERE ID = @id",
+            _conn.Execute("UPDATE horrormovies SET ModsHaveSeen = @oneOrTwo WHERE ID = @id",
                 new
-                {
-                    title = movie.Title,
-                    genres = movie.Genres,
-                    releaseDate = movie.ReleaseDate,
-                    releaseCountry = movie.ReleaseCountry,
-                    movieRating = movie.MovieRating,
-                    reviewRating = movie.ReviewRating,
-                    runTime = movie.RunTime,
-                    plot = movie.Plot,
-                    cast = movie.Cast,
-                    language = movie.Language,
-                    filmingLocations = movie.FilmingLocations,
-                    budget = movie.Budget,
+                {   
+                    oneOrTwo = movie.ModsHaveSeen,
                     id = movie.ID
                 });
         }

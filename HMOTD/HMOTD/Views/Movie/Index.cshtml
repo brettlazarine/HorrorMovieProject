@@ -41,6 +41,7 @@
                     <th>Language</th>
                     <th>Filming Locations</th>
                     <th>Budget</th>
+                    <th>Have The Mods Seen It?</th>
                 </tr>
 
                 @foreach (var movie in Model)
@@ -59,6 +60,7 @@
                         <td>@movie.Language</td>
                         <td>@movie.FilmingLocations</td>
                         <td>@movie.Budget</td>
+                        <td>@movie.ModsHaveSeen</td>
                     </tr>
                 }
 
