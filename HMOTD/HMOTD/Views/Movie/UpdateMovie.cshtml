@@ -4,15 +4,36 @@
 
 @model Movies
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Update Movie</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Creepster&display=swap" rel="stylesheet">
+    <link asp-append-version="true" type="text/css" href="~/css/HorrorStyle.css" rel="stylesheet" />
+</head>
 
-<h2>Update @Model.</h2>
+<body>
+    <div class="image-container">
+        <header>
+            <a class="nav" href="../ViewMovie/@Model.ID">Back to Movie Overview</a>
+        </header>
+        <main>
+<h2 id="update-head">Update Your Rating for:</h2>
+<h3 id="update-title">@Model.Title</h3>
 
 @using (Html.BeginForm("UpdateMovieToDatabase", "Movie", "Post")) 
 {
     <input asp-for="ID" type="hidden" value="@Model.ID" />
 
-    <label asp-for="ModsHaveSeen" class="control-label">Have Mods Seen It?</label>
-    <input type="number" step="1" max="1" min="0" name="ModsHaveSeen" class="form-control" value="@Model.ModsHaveSeen" />
+    <label asp-for="UserRating" class="control-label">Rate This Flick!</label>
+    <input type="number" step="1" max="10" min="0" name="UserRating" class="form-control" value="@Model.UserRating" />
 
-    <input type="submit" value="Update Movie" class="btn btn-primary" />
+    <input id="update-button" type="submit" value="Update Movie" class="btn btn-primary" />
 }
+
+        </main>
+    </div>
+</body>
+</html>

@@ -1,4 +1,5 @@
-﻿html, body {
+﻿/* ***** GENERAL ***** */
+html, body {
     margin: 0;
     height: 100%;
     overflow: hidden;
@@ -24,6 +25,29 @@ main {
     color: white;
     font-family: 'Creepster', cursive;
 }
+
+a {
+    color: white;
+    text-decoration: overline underline;
+    text-decoration-style: double;
+    font-size: 30px;
+    margin-left: 5px;
+}
+
+a:hover {
+        font-style: italic;
+        color: red;
+}
+
+.nav {
+    display: block;
+    position: static;
+    background: black;
+    text-decoration: underline;
+    text-decoration-style: double;
+}
+
+/* ***** HMOTD ***** */
 
 #title {
     font-size: 75px;
@@ -62,13 +86,139 @@ main {
     font-size: 30px
 }
 
-a {
-    color: white;
-    text-decoration: overline underline;
-    text-decoration-style: double;
+/* ***** DB INDEX ***** */
+
+#index-title {
+    text-align: center;
+    font-size: 100px;
+    margin: auto;
 }
 
-a:hover {
+table.index-table {
+    font-size: 20px;
+}
+
+.integer {
+    font-size: 30px;
+    text-align:center;
+}
+
+td {
+    border: solid white 2px;
+    text-align: center;
+}
+
+#to-top {
+    width: 100vw;
+    display: block;
+}
+
+
+/* ***** DB INSERT ***** */
+
+#insert-title {
+    text-align: center;
+    font-size: 100px;
+    margin: auto;
+}
+
+.form-control {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    font-size: 25px;
+}
+
+.control-label {
+    font-size: 40px;
+    display: block;
+    text-align: center;
+}
+
+.btn-insert {
+    margin: 20px auto;
+    display: block;
+    font-size: 30px;
+}
+
+#insert-button {
+    font-family: 'Creepster';
+    background: transparent;
+    color: white;
+    border: none;
+    font-size: 40px;
+    text-decoration: line-through;
+}
+
+#insert-button:hover {
+    font-style: italic;
+    color: red;
+}
+
+/* ***** DB UPDATE ***** */
+
+#update-head {
+    display: block;
+    text-align: center;
+    font-size: 75px;
+}
+
+#update-title {
+    display: block;
+    text-align: center;
+    font-size: 60px;
+}
+
+#update-button {
+    font-family: 'Creepster';
+    background: transparent;
+    color: white;
+    border: none;
+    font-size: 40px;
+    text-decoration: line-through;
+    display: block;
+    margin: auto;
+}
+
+#update-button:hover {
+    font-style: italic;
+    color: red;
+}
+
+/* ***** DB VIEW ***** */
+
+#view-title {
+    text-align: center;
+    margin: auto;
+    font-size: 75px;
+}
+
+.movie-prop {
+    text-align: center;
+    font-size: 35px;
+    text-decoration: underline;
+    margin: 15px;
+}
+
+.movie-info {
+    text-align: center;
+    margin: auto;
+    font-size: 30px;
+    display: block;
+    padding: 5px;
+    margin-bottom: 10px;
+}
+
+#delete-button {
+    font-family: 'Creepster';
+    background: transparent;
+    color: white;
+    border: none;
+    font-size: 30px;
+    text-decoration: line-through;
+}
+
+#delete-button:hover {
     font-style: italic;
     color: red;
 }

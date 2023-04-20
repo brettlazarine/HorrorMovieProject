@@ -1,7 +1,27 @@
-﻿@model Movies
+﻿@{
+    Layout = null;
+}
 
-<h2>Add Movie To the Database</h2>
+@model Movies
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Add Movie</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Creepster&display=swap" rel="stylesheet">
+    <link asp-append-version="true" type="text/css" href="~/css/HorrorStyle.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="image-container">
+        <header>
+            <a class="nav" href="./Index">Back to Database</a>
+        </header>
+        <main>
+
+<h2 id="insert-title">Add Movie To the Database</h2>
+    <section class="form">
 @using (Html.BeginForm("InsertMovieToDatabase", "Movie", "Post"))
 {
     <input asp-for="ID" type="hidden" value="" />
@@ -42,8 +62,15 @@
     <label asp-for="Budget" class="control-label">Budget</label>
     <input type="text" name="Budget" class="form-control" value="" />
 
-    <label asp-for="ModsHaveSeen" class="control-label">Have Mods Seen It?</label>
-    <input type="number" step="1" max="1" min="0" name="ModsHaveSeen" class="form-control" value="" />
+    <label asp-for="UserRating" class="control-label">User Rating</label>
+    <input type="number" step="1" max="10" min="0" name="UserRating" class="form-control" value="" />
 
-    <input type="submit" value="Create Movie" class="btn btn-primary" />
+    <input id="insert-button" type="submit" value="Create Movie" class="btn-insert btn-primary" />
 }
+    </section>
+
+
+        </main>
+    </div>
+</body>
+</html>

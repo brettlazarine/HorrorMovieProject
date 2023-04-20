@@ -19,15 +19,15 @@ namespace HMOTD
 
         public Movies GetMovie(int id)
         {
-            return _conn.QuerySingle<Movies>("SELECT * FROM horrormovies WHERE ID = @id", new { id });
+            return _conn.QuerySingle<Movies>("SELECT * FROM horrormovies WHERE ID = @id;", new { id });
         }
 
         public void UpdateMovie(Movies movie)
         {
-            _conn.Execute("UPDATE horrormovies SET ModsHaveSeen = @oneOrTwo WHERE ID = @id",
+            _conn.Execute("UPDATE horrormovies SET UserRating = @rating WHERE ID = @id;",
                 new
                 {   
-                    oneOrTwo = movie.ModsHaveSeen,
+                    rating = movie.UserRating,
                     id = movie.ID
                 });
         }
@@ -35,9 +35,9 @@ namespace HMOTD
         public void InsertMovie(Movies movieToInsert)
         {
             _conn.Execute("INSERT INTO horrormovies (Title, Genres, ReleaseDate, ReleaseCountry, MovieRating, ReviewRating, " +
-                "RunTime, Plot, Cast, Language, FilmingLocations, Budget, ModsHaveSeen) VALUES " +
+                "RunTime, Plot, Cast, Language, FilmingLocations, Budget, UserRating) VALUES " +
                 "(@title, @genres, @releaseDate, @releaseCountry, @movieRating, @reviewRating, @runTime, @plot, @cast, @language, " +
-                "@filmingLocations, @budget, @modsHaveSeen);", 
+                "@filmingLocations, @budget, @userRating);", 
                 new {title = movieToInsert.Title, 
                     genres = movieToInsert.Genres,
                     releaseDate = movieToInsert.ReleaseDate,
@@ -50,7 +50,7 @@ namespace HMOTD
                     language = movieToInsert.Language,
                     filmingLocations = movieToInsert.FilmingLocations,
                     budget = movieToInsert.Budget,
-                    modsHaveSeen = movieToInsert.ModsHaveSeen});
+                    userRating = movieToInsert.UserRating});
         }
 
         public void DeleteMovie(Movies movie)

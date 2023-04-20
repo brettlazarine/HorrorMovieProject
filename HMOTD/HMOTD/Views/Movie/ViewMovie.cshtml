@@ -17,12 +17,58 @@
     <body>
         <div class="image-container">
             <header>
-                <a href="..">Back to Movies</a>
+                <a class="nav" href="..">Back to Movies</a>
             </header>
-            <main>
-                <h3>@Model.Title Info</h3>
 
-                    <table class="table">
+            <main>
+
+            <h3 id="view-title">@Model.Title</h3>
+            <a class="update" href="../UpdateMovie/@Model.ID">Update This Movie</a>
+            <div>
+                @using (Html.BeginForm("DeleteMovie", "Movie", "Post"))
+                {
+                    <input type="hidden" asp-for="ID" value="@Model.ID" />
+                    <input id="delete-button" type="submit" onclick="return confirm('Are you sure?')" value="Delete this movie" />
+                }
+            </div>
+
+            <h4 class="movie-prop">Genres</h4>
+            <p class="movie-info">@Model.Genres</p>
+
+            <h4 class="movie-prop">Release Date</h4>
+            <p class="movie-info">@Model.ReleaseDate</p>
+
+            <h4 class="movie-prop">Release Country</h4>
+            <p class="movie-info">@Model.ReleaseCountry</p>
+
+            <h4 class="movie-prop">Movie Rating</h4>
+            <p class="movie-info">@Model.MovieRating</p>
+
+            <h4 class="movie-prop">Review Rating</h4>
+            <p class="movie-info">@Model.ReviewRating</p>
+
+            <h4 class="movie-prop">Run Time</h4>
+            <p class="movie-info">@Model.RunTime</p>
+
+            <h4 class="movie-prop">Plot</h4>
+            <p class="movie-info">@Model.Plot</p>
+
+            <h4 class="movie-prop">Cast</h4>
+            <p class="movie-info">@Model.Cast</p>
+
+            <h4 class="movie-prop">Language</h4>
+            <p class="movie-info">@Model.Language</p>
+
+            <h4 class="movie-prop">Filming Locations</h4>
+            <p class="movie-info">@Model.FilmingLocations</p>
+
+            <h4 class="movie-prop">Budget</h4>
+            <p class="movie-info">@Model.Budget</p>
+
+            <h4 class="movie-prop">User Rating</h4>
+            <p class="movie-info">@Model.UserRating</p>
+
+                    @*<table class="table">
                         <tr>
                             <th>ID</th>
                             <th>Title</th>
@@ -37,7 +83,7 @@
                             <th>Language</th>
                             <th>Filming Locations</th>
                             <th>Budget</th>
-                            <th>Have Mods Seen It?</th>
+                            <th>User Rating</th>
                         </tr>
                         <tr>
                             <th>@Model.ID</th>
@@ -53,21 +99,11 @@
                             <th>@Model.Language</th>
                             <th>@Model.FilmingLocations</th>
                             <th>@Model.Budget</th>
-                            <th>@Model.ModsHaveSeen</th>
+                            <th>@Model.UserRating</th>
                         </tr>
-                    </table>
+                    </table>*@
 
-                    <div>
-                        <a href="../UpdateMovie/@Model.ID">Update This Movie</a>
-                    </div>
-
-                    <div>
-                        @using (Html.BeginForm("DeleteMovie", "Movie", "Post"))
-                        {
-                            <input type="hidden" asp-for="ID" value="@Model.ID" />
-                            <input type="submit" onclick="return confirm('Are you sure?')" value="Delete this movie" />
-                        }
-            </div>
+                    
 
             </main> 
         </div>

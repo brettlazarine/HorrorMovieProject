@@ -16,17 +16,17 @@
 
 <body>
     <div class="image-container">
-        <header>
-            <a href="../..">Home</a>
+        <header class="db-nav">
+                <a class="nav" href="../..">Horror Movie of the Day</a>
         </header>
         <main>
-            <h2>Movies</h2>
+            <h2 id="index-title">Movies</h2>
 
             <a href="./InsertMovie">Add Movie</a>
 
 
 
-            <table class="table">
+            <table class="index-table">
                 <tr>
                     <th>ID</th>
                     <th>Title</th>
@@ -37,17 +37,17 @@
                     <th>Review Rating</th>
                     <th>Run Time</th>
                     <th>Plot</th>
-                    <th>Cast</th>
+                    @*<th>Cast</th>
                     <th>Language</th>
                     <th>Filming Locations</th>
-                    <th>Budget</th>
-                    <th>Have The Mods Seen It?</th>
+                    <th>Budget</th>*@
+                    <th>User Rating</th>
                 </tr>
 
                 @foreach (var movie in Model)
                 {
                     <tr>
-                        <td><a href="./ViewMovie/@movie.ID">@movie.ID</a></td>
+                        <td class="integer"><a href="./ViewMovie/@movie.ID">@movie.ID</a></td>
                         <td>@movie.Title</td>
                         <td>@movie.Genres</td>
                         <td>@movie.ReleaseDate</td>
@@ -56,18 +56,21 @@
                         <td>@movie.ReviewRating</td>
                         <td>@movie.RunTime</td>
                         <td>@movie.Plot</td>
-                        <td>@movie.Cast</td>
+                        @*<td>@movie.Cast</td>
                         <td>@movie.Language</td>
                         <td>@movie.FilmingLocations</td>
-                        <td>@movie.Budget</td>
-                        <td>@movie.ModsHaveSeen</td>
+                        <td>@movie.Budget</td>*@
+                        <td class="integer">@movie.UserRating</td>
                     </tr>
                 }
 
             </table>
-
+            <br />
+            <br />
 
         </main>
+        <footer>
+        </footer>
     </div>
 </body>
 </html>
