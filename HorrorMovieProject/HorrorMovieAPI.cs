@@ -17,7 +17,7 @@ namespace HorrorMovieProject
         public static Result GetMovieInfo(string key)
         {
             var client = new HttpClient();
-
+            var count = 0;
             int page;
             var movieOfDay = new Result();
             var date = DateTime.UtcNow.AddHours(-6).ToString("yyyy-MM-dd"); //format today's date to pull for a specific release date
@@ -39,6 +39,7 @@ namespace HorrorMovieProject
                 root = JsonConvert.DeserializeObject<Root>(response);
                 foreach (var item in root.results)
                 {
+                    count ++;
                     if (item.release_date == null || item.release_date == "") { continue; } //null/empty string check
                     if (item.release_date[5..] == date[5..] && item.vote_average > movieOfDay.vote_average) //ensure the film released *today* and has a higher voter score than the previous value
                     {
@@ -56,6 +57,8 @@ namespace HorrorMovieProject
             //$"https://api.themoviedb.org/3/movie/{movieOfDay.id}/videos?api_key={key}"
 
             //Console.WriteLine($"{movieOfDay.id}, {movieOfDay.release_date}, {movieOfDay.vote_average}"); //verify info
+
+            Console.WriteLine(count);
 
             return movieOfDay;
         }

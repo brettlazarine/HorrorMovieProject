@@ -4,7 +4,7 @@
     Layout = null;
 }
 @{
-    var TMDbKey = "2e5aaec53df627a3c2f12b971432f2ef";
+    var TMDbKey = GetKey.GetTMDbKey();
     var movieOfTheDay = HorrorMovieAPI.GetMovieInfo(TMDbKey);
     var movieVideo = HorrorMovieAPI.GetVideo(TMDbKey, movieOfTheDay);
 }

@@ -6,7 +6,7 @@ namespace HMOTD
     {
         public static string GetTMDbKey()
         {
-            var key = File.ReadAllText("keys.json");
+            var key = File.ReadAllText("appsettings.json");
             var TMDbKey = JObject.Parse(key).GetValue("TMDbKey").ToString();
             return TMDbKey;
         }
