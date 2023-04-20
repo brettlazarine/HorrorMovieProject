@@ -52,5 +52,10 @@ namespace HMOTD
                     budget = movieToInsert.Budget,
                     modsHaveSeen = movieToInsert.ModsHaveSeen});
         }
+
+        public void DeleteMovie(Movies movie)
+        {
+            _conn.Execute("DELETE FROM horrormovies WHERE id = @id;", new { id  = movie.ID });
+        }
     }
 }

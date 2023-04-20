@@ -61,6 +61,14 @@
                         <a href="../UpdateMovie/@Model.ID">Update This Movie</a>
                     </div>
 
+                    <div>
+                        @using (Html.BeginForm("DeleteMovie", "Movie", "Post"))
+                        {
+                            <input type="hidden" asp-for="ID" value="@Model.ID" />
+                            <input type="submit" onclick="return confirm('Are you sure?')" value="Delete this movie" />
+                        }
+            </div>
+
             </main> 
         </div>
     </body>

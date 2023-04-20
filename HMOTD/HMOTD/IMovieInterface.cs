@@ -8,5 +8,7 @@ namespace HMOTD
         public Movies GetMovie(int id);
         public void UpdateMovie(Movies movie);
         public void InsertMovie(Movies movieToInsert);
+
+        public void DeleteMovie(Movies movie);
     }
 }

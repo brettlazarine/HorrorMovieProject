@@ -54,5 +54,11 @@ namespace HMOTD.Controllers
             repo.InsertMovie(movieToInsert);
             return RedirectToAction("Index");
         }
+
+        public IActionResult DeleteMovie(Movies movie)
+        {
+            repo.DeleteMovie(movie);
+            return RedirectToAction("Index");
+        }
     }
 }
