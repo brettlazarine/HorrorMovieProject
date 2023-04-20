@@ -7,5 +7,6 @@ namespace HMOTD
         public IEnumerable<Movies> GetAllMovies();
         public Movies GetMovie(int id);
         public void UpdateMovie(Movies movie);
+        public void InsertMovie(Movies movieToInsert);
     }
 }

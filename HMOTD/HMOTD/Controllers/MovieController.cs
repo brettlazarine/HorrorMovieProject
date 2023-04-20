@@ -42,5 +42,17 @@ namespace HMOTD.Controllers
             repo.UpdateMovie(movie);
             return RedirectToAction("ViewMovie", new {id = movie.ID});
         }
+
+        public IActionResult InsertMovie()
+        {
+            var movie = new Movies();
+            return View(movie);
+        }
+
+        public IActionResult InsertMovieToDatabase(Movies movieToInsert)
+        {
+            repo.InsertMovie(movieToInsert);
+            return RedirectToAction("Index");
+        }
     }
 }

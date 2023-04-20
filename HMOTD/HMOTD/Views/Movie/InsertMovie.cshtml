@@ -1,0 +1,49 @@
+﻿@model Movies
+
+<h2>Add Movie To the Database</h2>
+
+@using (Html.BeginForm("InsertMovieToDatabase", "Movie", "Post"))
+{
+    <input asp-for="ID" type="hidden" value="" />
+
+    <label asp-for="Title" class="control-label">Title</label>
+    <input type="text" name="Title" class="form-control" value="" />
+
+    <label asp-for="Genres" class="control-label">Genres</label>
+    <input type="text" name="Genres" class="form-control" value="" />
+
+    <label asp-for="ReleaseDate" class="control-label">Release Date</label>
+    <input type="text" name="ReleaseDate" class="form-control" value="" />
+
+    <label asp-for="ReleaseCountry" class="control-label">Release Country</label>
+    <input type="text" name="ReleaseCountry" class="form-control" value="" />
+
+    <label asp-for="MovieRating" class="control-label">Movie Rating</label>
+    <input type="text" name="MovieRating" class="form-control" value="" />
+
+    <label asp-for="ReviewRating" class="control-label">Review Rating</label>
+    <input type="text" name="ReviewRating" class="form-control" value="" />
+
+    <label asp-for="RunTime" class="control-label">Run Time</label>
+    <input type="text" name="Runtime" class="form-control" value="" />
+
+    <label asp-for="Plot" class="control-label">Plot</label>
+    <input type="text" name="Plot" class="form-control" value="" />
+
+    <label asp-for="Cast" class="control-label">Cast</label>
+    <input type="text" name="Cast" class="form-control" value="" />
+
+    <label asp-for="Language" class="control-label">Language</label>
+    <input type="text" name="Language" class="form-control" value="" />
+
+    <label asp-for="FilmingLocations" class="control-label">Filming Locations</label>
+    <input type="text" name="FilmingLocations" class="form-control" value="" />
+
+    <label asp-for="Budget" class="control-label">Budget</label>
+    <input type="text" name="Budget" class="form-control" value="" />
+
+    <label asp-for="ModsHaveSeen" class="control-label">Have Mods Seen It?</label>
+    <input type="number" step="1" max="1" min="0" name="ModsHaveSeen" class="form-control" value="" />
+
+    <input type="submit" value="Create Movie" class="btn btn-primary" />
+}
