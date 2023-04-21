@@ -8,4 +8,4 @@ A second API call is sent to TMDb in order to retrieve the trailer for the film,
 A small database has also been included in the console app: the 2012-2017 IMDB horror films.
 This portion of the program is MVC focused, allowing for the user to view, update, create, and delete items from the MySQL connected database.
 
-The default formatting for the ASP.NET applications has been removed, with custom HTML, CSS, and hard-links created to provide a better aesthetic. 
+The default formatting for the ASP.NET applications has been removed, with custom HTML and CSS created to provide a better aesthetic. 
