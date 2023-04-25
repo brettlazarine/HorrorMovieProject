@@ -1,13 +1,15 @@
-﻿using System;
+﻿using Newtonsoft.Json.Linq;
+using System;
 namespace HorrorMovieProject
 {
     public class Program
     {
         static void Main(string[] args)
         {
-            var key = "2e5aaec53df627a3c2f12b971432f2ef";
-            var movieOfTheDay = HorrorMovieAPI.GetMovieInfo(key);       
-            var movieVideo = HorrorMovieAPI.GetVideo(key, movieOfTheDay); //needs adjustment!
+            var key = File.ReadAllText("C:\\TrueCoders\\GitHub\\repos\\HorrorMovieProject\\HorrorMovieProject\\appsettings.json");
+            var TMDbKey = JObject.Parse(key).GetValue("TMDbKey").ToString();
+            var movieOfTheDay = HorrorMovieAPI.GetMovieInfo(TMDbKey);       
+            var movieVideo = HorrorMovieAPI.GetVideo(TMDbKey, movieOfTheDay); //needs adjustment!
             //HorrorMovieAPI.GetVideo(key, movieOfTheDay);
             Console.WriteLine($"Movie id: {movieOfTheDay.id},\n" +
                 $"Movie Title: {movieOfTheDay.title},\n" +
