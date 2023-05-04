@@ -39,7 +39,7 @@ namespace HorrorMovieProject
                 root = JsonConvert.DeserializeObject<Root>(response);
                 foreach (var item in root.results)
                 {
-                    count ++;
+                    count++;
                     if (item.release_date == null || item.release_date == "") { continue; } //null/empty string check
                     if (item.release_date[5..] == date[5..] && item.vote_average > movieOfDay.vote_average) //ensure the film released *today* and has a higher voter score than the previous value
                     {
@@ -57,6 +57,7 @@ namespace HorrorMovieProject
             //$"https://api.themoviedb.org/3/movie/{movieOfDay.id}/videos?api_key={key}"
 
             //Console.WriteLine($"{movieOfDay.id}, {movieOfDay.release_date}, {movieOfDay.vote_average}"); //verify info
+            Console.WriteLine(movieOfDay.video);
 
             Console.WriteLine(count);
 
@@ -69,23 +70,42 @@ namespace HorrorMovieProject
 
             var videoURL = $"https://api.themoviedb.org/3/movie/{movie.id}/videos?api_key={key}&language=en-US";
 
-            string videoLink = "";
+            //string videoLink = "";
+
+            string youTubeKey = "";
 
             var response = client.GetStringAsync(videoURL).Result;
             Root root = JsonConvert.DeserializeObject<Root>(response);
 
+            var videos = new List<Result>();
+
             foreach (var item in root.results)
+            {
+                Console.WriteLine($"Site: {item.site}");
+                Console.WriteLine($"Type: {item.type}");
+                Console.WriteLine($"YouTube Key: {item.key}");
+                videos.Add(item);
+            }
+            foreach (var item in videos)
             {
                 if (item.site == "YouTube" && item.type == "Trailer")
                 {
-                    videoLink = $"https://www.youtube.com/watch?v={item.key}";
-                }
-                else
-                {
-                    videoLink = "Not found.";
+                    youTubeKey = item.key;
                 }
             }
-            return videoLink;
+
+            //Original YouTube key collection, no longer working
+            //    if (item.site == "YouTube" && item.type == "Trailer")
+            //    {
+            //        videoLink = $"https://www.youtube.com/watch?v={item.key}";
+            //    }
+            //    else
+            //    {
+            //        videoLink = "Not found.";
+            //    }
+            //}
+            return youTubeKey;
+            //}
         }
     }
 }
