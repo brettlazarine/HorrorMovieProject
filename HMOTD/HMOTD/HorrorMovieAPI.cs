@@ -56,23 +56,42 @@ namespace HMOTD
 
             var videoURL = $"https://api.themoviedb.org/3/movie/{movie.id}/videos?api_key={key}&language=en-US";
 
-            string videoLink = "";
+            //string videoLink = "";
+
+            string youTubeKey = "";
 
             var response = client.GetStringAsync(videoURL).Result;
             Root root = JsonConvert.DeserializeObject<Root>(response);
 
-            foreach (var item in root.results)
+            var videos = new List<Result>();
+
+            //foreach (var item in root.results)
+            //{
+            //    Console.WriteLine($"Site: {item.site}");
+            //    Console.WriteLine($"Type: {item.type}");
+            //    Console.WriteLine($"YouTube Key: {item.key}");
+            //    videos.Add(item);
+            //}
+            foreach (var item in videos)
             {
                 if (item.site == "YouTube" && item.type == "Trailer")
                 {
-                    videoLink = $"https://www.youtube.com/watch?v={item.key}/html5";
-                }
-                else
-                {
-                    videoLink = "Not found.";
+                    youTubeKey = item.key;
                 }
             }
-            return videoLink;
+
+            //Original YouTube key collection, no longer working
+            //    if (item.site == "YouTube" && item.type == "Trailer")
+            //    {
+            //        videoLink = $"https://www.youtube.com/watch?v={item.key}";
+            //    }
+            //    else
+            //    {
+            //        videoLink = "Not found.";
+            //    }
+            //}
+            return youTubeKey;
+            //}
         }
     }
 }

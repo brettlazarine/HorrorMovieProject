@@ -81,9 +81,10 @@ a:hover {
     font-size: 30px;
 }
 
-#movie-trailer {
-    text-align: center;
-    font-size: 30px
+#player {
+    display: block;
+    margin: auto;
+    padding-bottom: 30px;
 }
 
 /* ***** DB INDEX ***** */
@@ -113,6 +114,10 @@ td {
     display: block;
 }
 
+#top-link {
+    text-align: center;
+    display: block;
+}
 
 /* ***** DB INSERT ***** */
 
