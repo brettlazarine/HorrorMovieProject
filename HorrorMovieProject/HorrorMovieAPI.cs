@@ -91,6 +91,7 @@ namespace HorrorMovieProject
                 if (item.site == "YouTube" && item.type == "Trailer")
                 {
                     youTubeKey = item.key;
+                    return youTubeKey;
                 }
             }
 
