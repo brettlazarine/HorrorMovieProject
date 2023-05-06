@@ -32,6 +32,7 @@
             <p id="movie-overview">@movieOfTheDay.overview</p>
             <h3 id="movie-rating">Movie Rating: @movieOfTheDay.vote_average/10</h3>
 
+            @*beginning of iframe*@
             <div id="player"></div>
             <script>
                 // 2. This code loads the IFrame Player API code asynchronously.
@@ -45,7 +46,7 @@
                 //    after the API code downloads.
 
                 //make the C# variable available to JS
-                var trailer = '@movieVideo' 
+                var trailer = '@movieVideo'; 
 
                 var player;
                 function onYouTubeIframeAPIReady() {

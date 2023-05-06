@@ -77,6 +77,7 @@ namespace HMOTD
                 if (item.site == "YouTube" && item.type == "Trailer")
                 {
                     youTubeKey = item.key;
+                    Console.WriteLine(youTubeKey);
                     return youTubeKey; //select first trailer listed
                 }
             }
