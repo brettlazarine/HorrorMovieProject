@@ -1,4 +1,5 @@
 ﻿using Newtonsoft.Json;
+using System.Diagnostics;
 
 namespace HMOTD
 {
@@ -65,19 +66,19 @@ namespace HMOTD
 
             var videos = new List<Result>();
 
-            //foreach (var item in root.results)
-            //{
-            //    Console.WriteLine($"Site: {item.site}");
-            //    Console.WriteLine($"Type: {item.type}");
-            //    Console.WriteLine($"YouTube Key: {item.key}");
-            //    videos.Add(item);
-            //}
+            foreach (var item in root.results)
+            {
+                //Debug.WriteLine($"Site: {item.site}");
+                //Debug.WriteLine($"Type: {item.type}");
+                //Debug.WriteLine($"YouTube Key: {item.key}");
+                videos.Add(item);
+            }
+
             foreach (var item in videos)
             {
                 if (item.site == "YouTube" && item.type == "Trailer")
                 {
                     youTubeKey = item.key;
-                    Console.WriteLine(youTubeKey);
                     return youTubeKey; //select first trailer listed
                 }
             }

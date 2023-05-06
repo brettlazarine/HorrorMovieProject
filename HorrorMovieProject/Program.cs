@@ -9,7 +9,7 @@ namespace HorrorMovieProject
             var key = File.ReadAllText("C:\\TrueCoders\\GitHub\\repos\\HorrorMovieProject\\HorrorMovieProject\\appsettings.json");
             var TMDbKey = JObject.Parse(key).GetValue("TMDbKey").ToString();
             var movieOfTheDay = HorrorMovieAPI.GetMovieInfo(TMDbKey);       
-            var movieVideo = HorrorMovieAPI.GetVideo(TMDbKey, movieOfTheDay); //needs adjustment!
+            var movieVideo = HorrorMovieAPI.GetVideo(TMDbKey, movieOfTheDay);
             //HorrorMovieAPI.GetVideo(key, movieOfTheDay);
             Console.WriteLine($"Movie id: {movieOfTheDay.id},\n" +
                 $"Movie Title: {movieOfTheDay.title},\n" +
