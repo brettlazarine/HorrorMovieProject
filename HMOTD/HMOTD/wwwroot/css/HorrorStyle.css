@@ -3,6 +3,7 @@ html, body {
     margin: 0;
     height: 100%;
     overflow: hidden;
+    cursor: url('machete.png'), auto;
 }
 
 
@@ -32,6 +33,7 @@ a {
     text-decoration-style: double;
     font-size: 30px;
     margin-left: 5px;
+    cursor: url('machete.png'), auto;
 }
 
 a:hover {
@@ -159,6 +161,11 @@ td {
     font-style: italic;
     color: red;
 }
+
+form, label, input {
+    cursor: url('machete.png'), auto;
+}
+
 
 /* ***** DB UPDATE ***** */
 
