@@ -1,6 +1,6 @@
 ﻿namespace HMOTD
 {
-    public class VideoResult //specific to the video api call
+    public class VideoResult //specific to the video API call
     {
         public string iso_639_1 { get; set; }
         public string iso_3166_1 { get; set; }

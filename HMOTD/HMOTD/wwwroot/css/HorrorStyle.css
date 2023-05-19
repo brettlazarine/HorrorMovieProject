@@ -42,11 +42,16 @@ a:hover {
 }
 
 .nav {
-    display: block;
+    display: inline;
     position: static;
     background: black;
     text-decoration: underline;
     text-decoration-style: double;
+}
+
+header {
+    display: block;
+    background-color: black;
 }
 
 /* ***** HMOTD ***** */

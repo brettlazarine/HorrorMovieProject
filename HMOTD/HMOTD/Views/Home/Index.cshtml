@@ -34,8 +34,6 @@
 
             @*<p>Trailer: @movieVideo</p> quick verify of YT key*@
 
-            @*<div style="display:none;" id="trailer">@movieVideo</div> ***save for future issues when hidden element needed*@
-
             @*beginning of iframe*@
             <div id="player"></div>
             <script>
@@ -55,7 +53,6 @@
                     height: '390',
                     width: '640',
                     videoId: trailer,
-                    //videoId: document.getElementById("trailer").textContent, ***save for future issues when hidden element needed
                     playerVars: {
                       'playsinline': 1
                     },
