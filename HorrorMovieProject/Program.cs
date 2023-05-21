@@ -15,7 +15,7 @@ namespace HorrorMovieProject
                 $"Movie Title: {movieOfTheDay.title},\n" +
                 $"Movie Release Date {movieOfTheDay.release_date},\n" +
                 $"Movie Poster Path: {movieOfTheDay.poster_path},\n" +
-                $"Movie Video Path: {movieVideo}");
+                $"YouTube Key: {movieVideo}");
         }
     }
 }

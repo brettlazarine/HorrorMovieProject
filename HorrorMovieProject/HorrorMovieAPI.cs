@@ -57,9 +57,9 @@ namespace HorrorMovieProject
             //$"https://api.themoviedb.org/3/movie/{movieOfDay.id}/videos?api_key={key}"
 
             //Console.WriteLine($"{movieOfDay.id}, {movieOfDay.release_date}, {movieOfDay.vote_average}"); //verify info
-            Console.WriteLine(movieOfDay.video);
+            //Console.WriteLine(movieOfDay.video);
 
-            Console.WriteLine(count);
+            Console.WriteLine($"Number of movies: {count}");
 
             return movieOfDay;
         }
